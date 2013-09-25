@@ -55,6 +55,8 @@ function fileTree(dir) {
 
         var fileStats = fs.statSync(urlToFile);
 
+        var d = new Date(fileStats.mtime);
+
         if (fileStats.isDirectory()) {
 
             var childObj = fileTree(urlToFile);
@@ -70,8 +72,6 @@ function fileTree(dir) {
 
             if (fs.existsSync(dir+'/info.json')) {
                 var fileJSON = require("../../"+dir+"/info.json");
-
-            var d = new Date(fileStats.mtime);
 
             var lastmod = [d.getDate(), d.getMonth()+1, d.getFullYear()].join('.'),
                 lastmodSec = Date.parse(fileStats.mtime),
