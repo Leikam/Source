@@ -101,11 +101,11 @@ define([
                     //Building navigation HTML
                     var addNavPosition = function (target) {
 
-                            if (target.author != '') {
-                                authorName = ' | ' + RES_AUTHOR + ': ' + target.author + '';
-                            } else {
-                                authorName = '';
-                            }
+                        if (typeof target.author === 'undefined') {
+                            authorName = '';
+                        } else {
+                            authorName = ' | ' + RES_AUTHOR + ': ' + target.author + '';
+                        }
 
                         //fixing relative path due to server settings
                         var targetUrl = target.url;

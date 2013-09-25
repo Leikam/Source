@@ -8,7 +8,7 @@ var url = system.args[1],
 page.open(url);
 
 page.onLoadFinished = function (msg) {
-	if (msg != 'success') console.log('Сервер не отвечает.');
+	if (msg != 'success') console.log('Server not responding');
 	else {
 
         //TODO: create and check callback from templater
